@@ -1,13 +1,24 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$error = "";
+if (isset($_POST['submit'])) {
+    if ($_POST['login'] == USER and  $_POST['password'] == PASSWORD) {
+        $_SESSION['user'] = $_POST['login'];
+        
+    } else {
+        $error = "Wrong password";
+    }
+}
 
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <title>SmartHome</title>
  <link href="css/bootstrap.min.css" rel="stylesheet">
- <link href="style.css" rel="stylesheet">
 <style>
 .well{
-margin-top: 240px
+    margin-top: 240px
 }
 </style>
 <meta charset="UTF-8">
@@ -32,8 +43,7 @@ margin-top: 240px
 </div>
 </div>
 
-<script src="http://code.jquery-.com/jquery-latest.js"></script>
-<sript src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
     </body>
 </html>
 
