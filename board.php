@@ -12,9 +12,9 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="well  span12 "><h1>SmartHome </h1>
+			<div class="span12 "><h1>SmartHome </h1>
 			</div>
-			<div class="well graphic span12">
+			<div class="graphic span12">
 				
 			</div>
 
