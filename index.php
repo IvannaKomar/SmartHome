@@ -1,4 +1,5 @@
 <?php
+require 'db';
 require 'conf.php';
 session_start();
 $error = "";
