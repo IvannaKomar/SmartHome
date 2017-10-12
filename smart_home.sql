@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Окт 10 2017 г., 19:16
+-- Время создания: Окт 12 2017 г., 18:50
 -- Версия сервера: 5.7.19-0ubuntu0.16.04.1
 -- Версия PHP: 7.0.22-0ubuntu0.16.04.1
 
@@ -37,8 +37,20 @@ CREATE TABLE `devices` (
 --
 
 INSERT INTO `devices` (`id`, `number`, `state`) VALUES
-(1, 1, 'ON'),
+(1, 1, 'OFF'),
 (2, 2, 'OFF');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `temperatures`
+--
+
+CREATE TABLE `temperatures` (
+  `id` int(11) NOT NULL,
+  `value` int(11) NOT NULL,
+  `create_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Индексы сохранённых таблиц
@@ -51,6 +63,12 @@ ALTER TABLE `devices`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `temperatures`
+--
+ALTER TABLE `temperatures`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -59,6 +77,11 @@ ALTER TABLE `devices`
 --
 ALTER TABLE `devices`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT для таблицы `temperatures`
+--
+ALTER TABLE `temperatures`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

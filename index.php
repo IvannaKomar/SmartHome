@@ -4,9 +4,11 @@ error_reporting(E_ALL);
 require 'db.php';
 session_start();
 $error = "";
+var_dump($_POST);
 if (isset($_POST['submit'])) {
+    var_dump($_POST['login']);
     if ($_POST['login'] == USER and $_POST['password'] == PASSWORD) {
-        $_SESSION['user'] = $_POST['login'];
+        $_SESSION['user'] = $_POST['login']; 
         var_dump("ff");
         header('Location: board.php');
     } else {
@@ -34,7 +36,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     <?php endif; ?>
 
-                    <form method="POST" action="" accept-charset="UTF-8">
+                    <form method="POST" action="index.php">
                         <input type="text" class="span4" placeholder="Ваш логин" name="login">
                         <input type="password" class="span4" placeholder="Ваш пароль" name="password">
                         <button type="submit" name="submit" class="btn btn-block btn-success">Авторизоваться</button>
