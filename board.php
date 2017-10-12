@@ -4,36 +4,36 @@ session_start();
 if (empty($_SESSION['user'])) {
     header('Location: index.php');
 }
+if (isset($_POST['device1'])) {
+    $currentState = $pdo->query('SELECT state FROM devices WHERE number = 1 ORDER BY number')->fetchColumn(0);
+    
+$newState = ($currentState == "OFF") ? "ON" : 'OFF' ;
+$pdo->query("UPDATE devices SET state = '{$newState}' WHERE number = 1");    
+  
+}
+
+if (isset($_POST['device2'])) {
+    $currentState = $pdo->query('SELECT state FROM devices WHERE number = 2 ORDER BY number')->fetchColumn(0);
+      
+$newState = ($currentState == "OFF") ? "ON" : 'OFF' ;
+$pdo->query("UPDATE devices SET state = '{$newState}' WHERE number = 2");    
+  
+}
+
 $res = $pdo->query('SELECT number, state FROM devices ORDER BY number')->fetchAll();
 $button1 = $res[0];
 $button2 = $res[1];
 
+$button1Class = ($button1["state"] == "OFF") ? 'btn-success' : 'btn-danger' ;
+
+$button2Class = ($button2["state"] == "OFF") ? 'btn-success' : 'btn-danger' ;
 
 
-if ($button1["state"] == "OFF") {
-    $button1Class = 'btn-success';
-} else {
-    $button1Class = 'btn-danger';
-}
-if ($button2["state"] == "OFF") {
-    $button2Class = 'btn-success';
-} else {
-    $button2Class = 'btn-danger';
-}
 
 
-/*
-  1) Дописать иф в определение классов кнопок. Если OFF то зеленая иначе красная
-  2) Когда нажимают на кнопку устройства - получить текущий статус, и инвертировать его и обновить запись UPDATE devices SET state = 'ON' WHERE number = 1
- */
-
-if (isset($_POST['device1'])) {
-    $currentState = $pdo->query('SELECT state FROM devices WHERE number = 1 ORDER BY number')->fetchColumn(0);
-    var_dump($res);
-}
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,10 +55,10 @@ if (isset($_POST['device1'])) {
 
             </div>
             <div class="row"><form method="POST"> <div class=" span4">
-                        <button type="submit" name="device1" class="btn <?php echo $button1Class; ?>"> <h5 class="text-warning">Устройство 1</h5></button>
+                        <button type="submit" name="device1" class="btn <?php echo $button1Class; ?>"> Устройство 1</button>
                     </div>
                     <div class=" span4 offset4">
-                        <button type="submit" name="device2" class="btn <?php echo $button2Class; ?>"> <h5 class="text-warning">Устройство 2</h5></button>
+                        <button type="submit" name="device2" class="btn <?php echo $button2Class; ?>"> Устройство 2</button>
                     </div> </form>
             </div>
         </div>
