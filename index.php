@@ -4,12 +4,12 @@ error_reporting(E_ALL);
 require 'db.php';
 session_start();
 $error = "";
-var_dump($_POST);
+
 if (isset($_POST['submit'])) {
-    var_dump($_POST['login']);
+  
     if ($_POST['login'] == USER and $_POST['password'] == PASSWORD) {
         $_SESSION['user'] = $_POST['login']; 
-        var_dump("ff");
+      
         header('Location: board.php');
     } else {
         $error = "Введены неверные данные!!!";
