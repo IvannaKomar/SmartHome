@@ -37,14 +37,14 @@ $temperatures = $pdo->query("SELECT * FROM temperatures ORDER BY id DESC LIMIT 2
         <title>Smart Home</title>
         <!-- Bootstrap -->
         <link  href="css/bootstrap.css" rel="stylesheet">
-        <link  href="style.css" rel="stylesheet">
+        <link  href="style.css?g" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
         <script src="https://code.highcharts.com/highcharts.js"></script>        
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="span12 "><h1>SmartHome </h1>
+                <div class="span12 "><h1>Smart Home </h1>
 
                 </div>
                 <div id="container" class="graphic span12">
@@ -126,6 +126,6 @@ $temperatures = $pdo->query("SELECT * FROM temperatures ORDER BY id DESC LIMIT 2
                 });
             });
         </script>
-
+        <div class = "footer" span12> Copyright: sda </div>
     </body>
 </html>

@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     <head>
         <title>SmartHome</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link  href="style.css" rel="stylesheet">
+        <link  href="style.css?g" rel="stylesheet">
         <meta charset="UTF-8">
     </head>
     <body>

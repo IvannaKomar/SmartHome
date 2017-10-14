@@ -2,7 +2,6 @@
 	height: 300px;
 	background: #222;
 }
-
-.well{
-    margin-top: 240px
+.footer {
+  flex: 0 0 auto;
 }
