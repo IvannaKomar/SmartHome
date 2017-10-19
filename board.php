@@ -126,6 +126,6 @@ $temperatures = $pdo->query("SELECT * FROM temperatures ORDER BY id DESC LIMIT 2
                 });
             });
         </script>
-        <div class = "footer" span12> Copyright: sda </div>
+        
     </body>
 </html>
